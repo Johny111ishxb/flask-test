@@ -1,10 +1,15 @@
+# app.py
 from flask import Flask
-from handlers.routes import configure_routes
 
 app = Flask(__name__)
 
-configure_routes(app)
+@app.route('/', methods=['GET'])
+def home():
+    return "Homepage"
 
-if __name__ == "__main__":
-    app.run(debug=True)
+@app.route('/contact', methods=['GET'])
+def contact():
+    return "Contact page"
     
+if __name__ == "__main__":
+    app.run() | Source: Genelify.com 
